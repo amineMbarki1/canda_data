@@ -3,7 +3,7 @@ export default function Table({
   rows,
 }: {
   labels: string[];
-  rows: Record<string, string>[];
+  rows: Record<string, string | number>[];
 }) {
   return (
     <div className="not-prose relative  rounded-xl overflow-hidden bg-slate-800">
