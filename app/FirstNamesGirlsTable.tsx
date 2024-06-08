@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Table from "./Table";
 import firstNamesGirls from "./firstNamesGirls";
@@ -10,8 +10,8 @@ export default function FirstNamesGirlsTable() {
     searchInKey: "name",
   });
   return (
-    <div>
-      <div className="w-full bg-slate-800 mb-[-10px] pl-5 py-3 rounded-t-lg mt-2 pr-5">
+    <>
+      <div className="w-full bg-slate-800 mb-[-10px] pl-5 py-3 rounded-t-lg pr-5">
         <label className="text-slate-50 mr-2 font-semibold block" htmlFor="#">
           Search
         </label>
@@ -22,6 +22,6 @@ export default function FirstNamesGirlsTable() {
         />
       </div>
       <Table rows={searchResult} labels={["Prénom Fille", "Rang"]} />
-    </div>
+    </>
   );
 }

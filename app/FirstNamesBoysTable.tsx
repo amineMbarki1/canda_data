@@ -11,7 +11,7 @@ export default function FirstNamesBoysTable() {
   });
   return (
     <div>
-      <div className="w-full bg-slate-800 mb-[-10px] pl-5 py-3 rounded-t-lg mt-2 pr-5">
+      <div className="w-full bg-slate-800 mb-[-10px] pl-5 py-3 rounded-t-lg  pr-5">
         <label className="text-slate-50 mr-2 font-semibold block" htmlFor="#">
           Search
         </label>
