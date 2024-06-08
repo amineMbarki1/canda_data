@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=AnyDesk
+Exec=env WINEPREFIX="/home/emino/.wine" wine C:\\\\users\\\\Public\\\\Desktop\\\\AnyDesk.lnk
+Type=Application
+StartupNotify=true
+Comment=AnyDesk
+Icon=F6EB_AnyDesk.0
+StartupWMClass=anydesk.exe

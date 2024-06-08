@@ -1,7 +1,7 @@
 const addresses = [
   "sympatico.ca",
   "bell.net",
-  "videotran.ca",
+  "videotron.ca",
   "cgocable.ca",
   "oricom.ca",
   "qc.aira.com",
