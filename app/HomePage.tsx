@@ -60,16 +60,20 @@ export default function HomePage() {
             "rounded-t-lg font-semibold ml-2"
           )}
         >
-          Québec 
+          Québec
         </button>
       </div>
       {activeTable === "lastNames" && <LastNamesTable />}
       {activeTable === "emails" && <EmailsTable />}
       {activeTable === "firstNames" && (
-        <>
-          <FirstNamesTable />
-          <FirstNamesGirlsTable />
-        </>
+        <div className="flex overflow-x-scroll">
+          <div className="flex-grow-[1]">
+            <FirstNamesTable />
+          </div>
+          <div className="flex-grow-[1]">
+            <FirstNamesGirlsTable />
+          </div>
+        </div>
       )}
     </main>
   );
