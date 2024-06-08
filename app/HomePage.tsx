@@ -60,7 +60,7 @@ export default function HomePage() {
             "rounded-t-lg font-semibold ml-2"
           )}
         >
-          Canada
+          Québec 
         </button>
       </div>
       {activeTable === "lastNames" && <LastNamesTable />}
