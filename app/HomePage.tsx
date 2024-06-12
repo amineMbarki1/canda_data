@@ -6,11 +6,18 @@ import FirstNamesTable from "./FirstNamesBoysTable";
 import FirstNamesGirlsTable from "./FirstNamesGirlsTable";
 import { useState } from "react";
 import clsx from "clsx";
+import lastNames from "./lastNames";
 
 export default function HomePage() {
   const [activeTable, setActiveTable] = useState<
     "lastNames" | "firstNames" | "emails"
   >("lastNames");
+
+  const [activeState, setActiveState] = useState<"queubec" | "ontario">(
+    "queubec"
+  );
+
+  console.log(activeState);
 
   return (
     <main className="max-w-screen-lg mx-auto mt-10">
@@ -46,24 +53,31 @@ export default function HomePage() {
         </div>
 
         <button
+          onClick={() => setActiveState("ontario")}
           className={clsx(
-            false && "bg-slate-800 p-3 text-slate-50",
+            activeState === "ontario" && "bg-slate-800 p-3 text-slate-50",
             "rounded-t-lg font-semibold ml-2"
           )}
         >
           Ontario
         </button>
         <button
-          onClick={() => setActiveTable("firstNames")}
+          onClick={() => setActiveState("queubec")}
           className={clsx(
-            true && "bg-slate-800 p-3 text-slate-50",
+            activeState === "queubec" && "bg-slate-800 p-3 text-slate-50",
             "rounded-t-lg font-semibold ml-2"
           )}
         >
           Québec
         </button>
       </div>
-      {activeTable === "lastNames" && <LastNamesTable />}
+      {activeTable === "lastNames" && (
+        <LastNamesTable
+          lastNames={
+            activeState === "ontario" ? lastNames.ontario : lastNames.quebec
+          }
+        />
+      )}
       {activeTable === "emails" && <EmailsTable />}
       {activeTable === "firstNames" && (
         <div className="flex overflow-x-scroll">

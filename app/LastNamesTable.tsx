@@ -1,12 +1,16 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import lastNames from "./lastaNames";
+import { LastNameData } from "./lastNames";
 import { normalizeString } from "./utils";
 import Table from "./Table";
 import styles from "./LastNamesTyble.module.css";
 
-export default function LastNamesTable() {
+export default function LastNamesTable({
+  lastNames,
+}: {
+  lastNames: LastNameData[];
+}) {
   const [searchTerm, setSearchTerm] = useState("");
 
   const searchResult = useMemo(() => {
@@ -18,7 +22,7 @@ export default function LastNamesTable() {
         .replace("-", "")
         .includes(normalizedSearchTerm)
     );
-  }, [searchTerm]);
+  }, [searchTerm, lastNames]);
 
   return (
     <>
@@ -34,13 +38,31 @@ export default function LastNamesTable() {
       </div>
 
       <div className={`flex flex-wrap ${styles.tablesWrapper}`}>
-        <Table rows={searchResult.slice(0, 250)} labels={["Nom", "Rang"]} />
+        <Table
+          rows={
+            searchResult.slice(0, 250) as unknown as Record<string, number>[]
+          }
+          labels={["Nom", "Rang"]}
+        />
 
-        <Table rows={searchResult.slice(250, 500)} labels={["Nom", "Rang"]} />
+        <Table
+          rows={
+            searchResult.slice(250, 500) as unknown as Record<string, number>[]
+          }
+          labels={["Nom", "Rang"]}
+        />
 
-        <Table rows={searchResult.slice(500, 750)} labels={["Nom", "Rang"]} />
+        <Table
+          rows={
+            searchResult.slice(500, 750) as unknown as Record<string, number>[]
+          }
+          labels={["Nom", "Rang"]}
+        />
 
-        <Table rows={searchResult.slice(750)} labels={["Nom", "Rang"]} />
+        <Table
+          rows={searchResult.slice(750) as unknown as Record<string, number>[]}
+          labels={["Nom", "Rang"]}
+        />
       </div>
       <div className="rounded-b-lg h-5 w-full  mt-[-10px] bg-slate-800"></div>
     </>
