@@ -7,6 +7,7 @@ import FirstNamesGirlsTable from "./FirstNamesGirlsTable";
 import { useState } from "react";
 import clsx from "clsx";
 import lastNames from "./lastNames";
+import FirstNamesOntario from "./FrstNamesOntario";
 
 export default function HomePage() {
   const [activeTable, setActiveTable] = useState<
@@ -79,7 +80,7 @@ export default function HomePage() {
         />
       )}
       {activeTable === "emails" && <EmailsTable />}
-      {activeTable === "firstNames" && (
+      {activeTable === "firstNames" && activeState === "queubec" ? (
         <div className="flex overflow-x-scroll">
           <div className="flex-grow-[1]">
             <FirstNamesTable />
@@ -88,6 +89,8 @@ export default function HomePage() {
             <FirstNamesGirlsTable />
           </div>
         </div>
+      ) : (
+        <FirstNamesOntario />
       )}
     </main>
   );
