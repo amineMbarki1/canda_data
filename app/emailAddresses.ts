@@ -7,7 +7,7 @@ const addresses = [
   "qc.aira.com",
   "ccapcable.com",
   "ebox.ca",
-  "terlus.net",
+  "telus.net",
   "xplornet.com",
   "b2b2c.ca",
   "vmedia.ca",
