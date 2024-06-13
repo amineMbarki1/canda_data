@@ -52,7 +52,7 @@ export default function LastNamesTable({
           labels={["Nom", "Rang"]}
         />
 
-        {searchResult.slice(750).length === 0 && (
+        {searchResult.slice(750).length > 0 && (
           <Table
             rows={
               searchResult.slice(500, 750) as unknown as Record<
@@ -64,7 +64,7 @@ export default function LastNamesTable({
           />
         )}
 
-        {searchResult.slice(750).length === 0 && (
+        {searchResult.slice(750).length > 0 && (
           <Table
             rows={
               searchResult.slice(750) as unknown as Record<string, number>[]

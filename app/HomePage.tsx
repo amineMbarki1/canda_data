@@ -18,7 +18,6 @@ export default function HomePage() {
     "queubec"
   );
 
-  console.log(activeState);
 
   return (
     <main className="max-w-screen-lg mx-auto mt-10">
@@ -80,7 +79,7 @@ export default function HomePage() {
         />
       )}
       {activeTable === "emails" && <EmailsTable />}
-      {activeTable === "firstNames" && activeState === "queubec" ? (
+      {activeTable === "firstNames" && activeState === "queubec" && (
         <div className="flex overflow-x-scroll">
           <div className="flex-grow-[1]">
             <FirstNamesTable />
@@ -89,7 +88,8 @@ export default function HomePage() {
             <FirstNamesGirlsTable />
           </div>
         </div>
-      ) : (
+      )}
+      {activeTable === "firstNames" && activeState === "ontario" && (
         <FirstNamesOntario />
       )}
     </main>
