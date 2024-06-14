@@ -10,7 +10,10 @@ export default function EmailsTable() {
         </label>
         <input className="text-slate-50 border-transparent rounded p-3 focus:outline-none focus:border-sky-600 mb-[10px] bg-slate-700" />
       </div>
-      <Table labels={["Adresse courriel"]} rows={addresses.map((email) => ({ email }))} />
+      <Table
+        labels={["Adresse courriel"]}
+        rows={addresses.map(({ address }) => ({ address }))}
+      />
     </>
   );
 }

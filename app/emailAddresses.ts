@@ -18,7 +18,6 @@ const addresses = [
   "distributel.ca",
   "allotelecom.ca",
   "globetrotter.net",
-  "telus.net",
 ];
 
-export default addresses;
+export default addresses.map((address) => ({ address: address }));
