@@ -9,7 +9,6 @@ export default function EmailsTable() {
     searchInKey: "address",
   });
 
-
   return (
     <div className="mt-2">
       <SearchInput
@@ -30,11 +29,15 @@ export default function EmailsTable() {
             "grid grid-cols-1  max-h-[555px] overflow-auto relative z-20 px-4"
           }
         >
-          {searchResult.map(({ address }) => (
-            <div key={address} className={"flex h-12 items-center border-b"}>
-              <span className="w-[100%]  text-gray-500 text-md">{address}</span>
-            </div>
-          ))}
+          {(searchResult as unknown as { address: string }[]).map(
+            ({ address }) => (
+              <div key={address} className={"flex h-12 items-center border-b"}>
+                <span className="w-[100%]  text-gray-500 text-md">
+                  {address}
+                </span>
+              </div>
+            )
+          )}
         </div>
       </div>
     </div>

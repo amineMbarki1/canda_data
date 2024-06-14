@@ -57,12 +57,14 @@ export default function EmailsTable() {
             "grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1  max-h-[555px] overflow-auto relative z-20 px-4"
           }
         >
-          {searchResult.map(({ name, rank }) => (
-            <div key={name} className={"flex h-12 items-center border-b"}>
-              <span className="w-[50%]  text-gray-500 text-md">{name}</span>
-              <span className="w-[50%]  text-gray-500 text-md">{rank}</span>
-            </div>
-          ))}
+          {(searchResult as unknown as { name: string; rank: number }[]).map(
+            ({ name, rank }) => (
+              <div key={name} className={"flex h-12 items-center border-b"}>
+                <span className="w-[50%]  text-gray-500 text-md">{name}</span>
+                <span className="w-[50%]  text-gray-500 text-md">{rank}</span>
+              </div>
+            )
+          )}
         </div>
       </div>
     </div>
